@@ -2,10 +2,39 @@
 <html lang="pt">
     <head>
         <meta charset="UTF-8">
+        <meta name="author" content="John Doe">
+        <meta name="description" content="Portfolio online">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Home</title>
         <link rel="icon" href="">
+        <link rel="stylesheet" href="home-style.css"/>
     </head>
     <body>
-        
+        <div class="home-grid-container">
+            <header class="header">
+                <img src="images/home-header.png" alt="personImg">
+            </header>
+            <nav class="nav">
+                <div class="nav-flex-container">
+                    <div>About me</div>
+                    <div>Projects</div>
+                    <div>Contact me</div>
+                </div>
+            </nav>
+            <main class="main">
+                    <!-- Images that go into the main div on the Home screen MUST
+                    HAVE AN ASPECT RATIO OF 5:4 if on monitor, find the right size in one
+                    of these websites, by doing a rule of 3 (regra de 3 simples)
+                    calculation on the desired size:
+                    https://www.4devs.com.br/calculadora_regra_tres_simples
+                    https://www.mathepower.com/en/ruleofthree.php
+
+                    This should allow for the images to scale properly with the
+                    size of the fraction on the website -->
+                    <div class="gallery-flex-container">
+                        <img src="images/home-mainPlaceholder.png" alt="showcaseImg">
+                    </div>
+            </main>
+          </div>
     </body>
 </html>
