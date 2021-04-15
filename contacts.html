@@ -7,10 +7,9 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Contacts</title>
         <link rel="icon" href="">
-        <link rel="stylesheet" href="universal-style.css"/>
-        <link rel="stylesheet" href="subpages-style.css"/>
+        <link rel="stylesheet" href="style.css"/>
     </head>
-    <body>
+    <body name="contacts-subpage" class="subpage-grid-container">
         <nav>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
@@ -19,36 +18,46 @@
         </nav>
         <header>
             <img src="images/home-header.png">
+            <p>
+                John Doe, Junior Game Developer
+                <br><br>
+                placeholderEmail@notreal.com
+            </p>
         </header>
-        <main>
+        <main name="contacts-centered">
             <section>
-                <p>
-                    To get in contact with me, please use the contact form below
-                    or send me an email to this address
-                </p>
-                <p>
-                    placeholderEmail@notreal.com
-                </p>
+                <section>
+                    <p>
+                        To get in contact with me, please use the contact form below
+                        or send me an email to this address
+                    </p>
+                    <p>
+                        placeholderEmail@notreal.com
+                    </p>
+                </section>
+                <form id="contact-form" method="POST">
+                    <fieldset>
+                        <legend>Contact me here</legend>
+                        <section>
+                            <label for="name">Your name:</label>
+                            <input type="text" id="name" name="name" autocomplete="name" placeholder="John Doe" required>
+                        </section>
+                        
+                        <section>
+                            <label for="email">Your email:</label>
+                            <input type="email" id="email" name="email" autocomplete="email" placeholder="yourEmail@service.com" required>
+                        </section>
+                        
+                        <section>
+                            <label for="message">Your message:</label>
+                            <textarea id="message" name="message" rows="15" cols="85" maxlength="1000"></textarea>
+                        </section>
+                    </fieldset>
+                </form>
             </section>
-            <form id="contact-form" method="POST">
-                <fieldset>
-                    <legend>Contact me here</legend>
-                    <section>
-                        <label for="name">Your name:</label>
-                        <input type="text" id="name" name="name" autocomplete="name" placeholder="John Doe" required>
-                    </section>
-                    
-                    <section>
-                        <label for="email">Your email:</label>
-                        <input type="email" id="email" name="email" autocomplete="email" placeholder="yourEmail@service.com" required>
-                    </section>
-                    
-                    <section>
-                        <label for="message">Your message:</label>
-                        <textarea id="message" name="message" rows="15" cols="85" maxlength="1000"></textarea>
-                    </section>
-                </fieldset>
-            </form>
         </main>
+        <footer>
+            
+        </footer>
     </body>
 </html>
