@@ -173,6 +173,10 @@ body {
             "nav main"
             "footer footer";
     }
+    
+    body[name*="subpage"] header {
+        width: 100%;
+    }
 
     body[name*="subpage"] header img {
         max-height: 12vh;
@@ -401,10 +405,10 @@ body[name*="subpage"] header {
 
 body[name*="subpage"] main {
     grid-area: main;
-    padding: 2vh 5vw 3vh 5vw;
+    padding: 1vh 5vw 3vh 5vw
 }
 
-body[name*="subpage"] main[name*="about"] {
+body[name*="subpage"] main[name*="about"], body[name*="subpage"] main[class^="project"] {
     overflow-y: scroll;
     -ms-overflow-style: none;
 }
@@ -454,7 +458,6 @@ fieldset > section textarea {
 .project-container {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 5%;
 }
 
@@ -556,4 +559,16 @@ nav a:active {
     gap: 4vw;
     row-gap: 5vh;
     padding: 3vh 0 3vh 0;
+}
+
+table[name|="techniques"] {
+    background: linear-gradient(rgb(30, 30, 30) 0%, rgb(60, 60, 60) 100%);
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 6px;
+    padding: 1em;
+}
+
+table[name|="techniques"] thead th {
+    
 }
