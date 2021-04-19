@@ -77,6 +77,10 @@ body {
             "footer";
     }
 
+    * {
+        font-size: 0.95em;
+    }
+
     body[name*="subpage"] header img {
         max-height: 12vh;
         width: auto;
