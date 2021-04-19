@@ -6,7 +6,7 @@
         <meta name="description" content="Contacts">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Contacts</title>
-        <link rel="icon" href="">
+        <link rel="icon" href="images/favicon.ico">
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body name="contacts-subpage" class="subpage-grid-container">
@@ -22,7 +22,7 @@
             <p>
                 John Doe, Junior Game Developer
                 <br><br>
-                placeholderEmail@notreal.com
+                temporaryemail.pw@gmail.com
             </p>
         </header>
         <main name="contacts-centered">
@@ -33,10 +33,11 @@
                         or send me an email to this address
                     </p>
                     <p>
-                        placeholderEmail@notreal.com
+                        temporaryemail.pw@gmail.com
                     </p>
                 </section>
-                <form id="contact-form" method="POST">
+                <form id="contact-form" action="mailto:temporaryemail.pw@gmail.com"
+                    method="POST" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Contact me</legend>
                         <section>
@@ -54,6 +55,7 @@
                             <textarea id="message" name="message" rows="15" cols="85" maxlength="1000"></textarea>
                         </section>
                     </fieldset>
+                    <input type="image" src="images/submit.png" alt="Submit">
                 </form>
             </section>
         </main>

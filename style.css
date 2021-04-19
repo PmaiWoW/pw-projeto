@@ -34,21 +34,43 @@
     src: url("fonts/Roboto-Italic.ttf")
 }
 
+/* Set default font, box sizing, text color, margin and padding for all content */
 * {
-    font-family: "Roboto";
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: lighter;
     box-sizing: border-box;
     color: whitesmoke;
     padding: 0;
     margin: 0;
 }
 
+main a {
+    color: rgb(255, 190, 125);
+    text-decoration: none;
+}
+
+a:link, .nav a:visited {
+    color: whitesmoke;
+}
+
+a:hover {
+    animation-name: link-text-color-hover;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+}
+
 /* Apply background image to all pages' bodies*/
 body {
     background-image: url("images/background.png");
+    background-attachment: fixed;
+    position: sticky;
 }
 
-@media only screen and (max-width: 600px)
+/* Mobile media query (821px is the largest phone screen size found) */
+@media only screen and (max-width: 640px)
 {
+    /* Home page grid layout */
     .home-grid-container
     {
         display: grid;
@@ -63,6 +85,8 @@ body {
             "main";
     }
 
+    
+    /* Subpage grid layout */
     .subpage-grid-container {
         display: grid;
         width: 100vw;
@@ -77,7 +101,7 @@ body {
             "footer";
     }
 
-    * {
+    table {
         font-size: 0.95em;
     }
 
@@ -108,6 +132,12 @@ body {
 
     .flex-project img {
         width: 50vw;
+        transition: width, height 0.5s, 0.5s;
+    }
+
+    .flex-project img:hover {
+        width: 60vw;
+        height: auto;
     }
 
     .flex-rowwrap-projects {
@@ -116,7 +146,12 @@ body {
 
     fieldset > section textarea {
         width: 80vw;
-        height: 40vh;
+        height: 35vh;
+    }
+
+    form input[alt="Submit"] {
+        display: flex;
+        width: 25vw;
     }
 
     body[name*="home"] header {
@@ -152,7 +187,9 @@ body {
     }
 }
 
-@media only screen and (min-width: 600px) {
+/* Tablet media query */
+@media only screen and (min-width: 640px) {
+    /* Home page grid layout */
     .home-grid-container {
         display: grid;
         width: 100vw;
@@ -165,6 +202,7 @@ body {
             "main main";
     }
 
+    /* Subpage grid layout */
     .subpage-grid-container {
         display: grid;
         width: 100vw;
@@ -202,11 +240,17 @@ body {
     .flex-rowwrap {
         flex-direction: row;
         font-size: 0.9em;
-        gap: 1vw;
+        gap: 5%;
     }
 
     .flex-project img {
         width: 50vw;
+        transition: width, height 0.5s, 0.5s;
+    }
+
+    .flex-project img:hover {
+        width: 60vw;
+        height: auto;
     }
 
     .flex-rowwrap-projects {
@@ -215,7 +259,12 @@ body {
 
     fieldset > section textarea {
         width: 60vw;
-        height: 40vh;
+        height: 37.5vh;
+    }
+
+    form input[alt="Submit"] {
+        display: flex;
+        width: 22.5vw;
     }
 
     body[name*="home"] header {
@@ -253,6 +302,7 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+    /* Home page grid layout */
     .home-grid-container {
         display: grid;
         width: 100vw;
@@ -267,6 +317,7 @@ body {
             "nav main main main main main";
     }
 
+    /* Subpage page grid layout */
     .subpage-grid-container {
         display: grid;
         width: 100vw;
@@ -316,11 +367,17 @@ body {
     .flex-rowwrap {
         flex-direction: row;
         font-size: 1em;
-        gap: 2vw;
+        gap: 5%;
     }
 
     .flex-project img {
+        width: 22.5vw;
+        transition: width, height 0.5s, 0.5s;
+    }
+
+    .flex-project img:hover {
         width: 25vw;
+        height: auto;
     }
 
     .flex-rowwrap-projects {
@@ -329,7 +386,12 @@ body {
 
     fieldset > section textarea {
         width: 50vw;
-        height: 35vh;
+        height: 32.5vh;
+    }
+
+    form input[alt="Submit"] {
+        display: flex;
+        width: 12.5vw;
     }
     
     body[name*="home"] header {
@@ -373,6 +435,10 @@ body {
     }
 }
 
+/* Show scrollbar on main of subpages if height is under 600px, as the content
+needed in the various of these cannot be properly displayed if no scrollbar is
+accessible (the nature of the content demands it is in the same page, but the
+quantity is high) */
 @media only screen and (max-height: 600px)
 {
     body[name*="subpage"] main {
@@ -381,6 +447,9 @@ body {
     }
 }
 
+/* Hide the scrollbar that was displayed for the reasons mentioned above if 
+the height is over 600px (except for the about main, as that page has a lot
+of content */
 @media only screen and (min-height: 600px)
 {
     body[name*="subpage"] main {
@@ -419,6 +488,12 @@ body[name*="subpage"] main[name*="about"], body[name*="subpage"] main[class^="pr
 
 body[name*="subpage"] footer {
     grid-area: footer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 fieldset {
@@ -473,7 +548,7 @@ fieldset > section textarea {
     row-gap: 1vh;
 }
 
-.flex-rowwrap > a {
+.flex-rowwrap a {
     text-decoration: none;
 }
 
@@ -532,16 +607,14 @@ nav a {
     text-decoration: none;
 }
 
-nav a:link , .nav a:visited {
+nav a:link, .nav a:visited {
     color: whitesmoke;
 }
 
 nav a:hover {
-    color: rgb(190, 190, 190);;
-}
-
-nav a:active {
-    color: rgb(35, 35, 35)
+    animation-name: nav-text-color-hover;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
 }
 
 .flex-rowwrap {
@@ -554,14 +627,26 @@ nav a:active {
     padding: 3vh 0 3vh 0;
 }
 
+main[name*="about"] .flex-rowwrap section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+main[name*="about"] .flex-rowwrap img {
+    max-height: 4vh;
+    border-style: none;
+}
+
 .flex-rowwrap-projects {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     flex-flow: row wrap;
-    gap: 4vw;
-    row-gap: 5vh;
+    gap: 3vw;
+    row-gap: 2vh;
     padding: 3vh 0 3vh 0;
 }
 
@@ -587,4 +672,83 @@ table[name|="techniques"] tbody td {
     border-width: 0.15em;
     border-radius: 0.5em;
     padding: 0.4em 0.5em 0.4em 0.5em;
+}
+
+body[name*="showcase"] main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6vh;
+}
+
+section[name="project-intro"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5vw;
+}
+
+section[name="project-intro"] section {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+section[name="project-intro"] h2 {
+    padding-bottom: 1vw;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 0.2em;
+}
+
+section[name="project-intro"] iframe {
+    max-width: 50%;
+}
+
+section[name="project-info"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 9vw;
+}
+
+section[name="project-info"] section[name="info"], section[name="project-info"] section[name="responsibility"] {
+    width: 40%;
+}
+
+section[name="project-info"] section[name="responsibility"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body[name*="projects"] main img {
+    border-style: ridge;
+    border-width: 0.4em;
+    border-color: rgb(130, 130, 130);
+}
+
+body[name*="projects"] main img:hover {
+    animation-name: proj-border-color-hover;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes link-text-color-hover {
+    0% { color: rgb(255, 190, 125); }
+    50% { color: rgb(248, 125, 0); }
+    100% { color: rgb(255, 190, 125); }
+}
+
+@keyframes nav-text-color-hover {
+    0% { color: whitesmoke; }
+    50% { color: rgb(220, 20, 20); }
+    100% { color: whitesmoke; }
+}
+
+@keyframes proj-border-color-hover {
+    0% { border-color: rgb(130, 130, 130); }
+    50% { border-color: rgb(120, 30, 30); }
+    100% { border-color: rgb(130, 130, 130); }
 }
