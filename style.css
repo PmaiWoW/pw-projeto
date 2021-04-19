@@ -36,9 +36,7 @@
 
 /* Set default font, box sizing, text color, margin and padding for all content */
 * {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: lighter;
+    font-family: "Roboto";
     box-sizing: border-box;
     color: whitesmoke;
     padding: 0;
