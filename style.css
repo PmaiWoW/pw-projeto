@@ -183,6 +183,51 @@ body {
         max-width: 24vw;
         height: auto;
     }
+
+    body[name*="showcase"] main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1vh;
+        font-size: 0.9em;
+    }
+    
+    section[name="project-intro"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+    }
+    
+    section[name="project-intro"] section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    section[name="project-intro"] h2 {
+        padding-bottom: 0.4em;
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-underline-offset: 0.1em;
+    }
+
+    section[name="project-intro"] iframe {
+        width: 100%;
+    }
+    
+    section[name="project-info"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    section[name="project-info"] section[name="responsibility"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 /* Tablet media query */
@@ -297,6 +342,51 @@ body {
         width: 12.5vw;
         height: auto;
     }
+
+    body[name*="showcase"] main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1vh;
+        font-size: 0.95em;
+    }
+    
+    section[name="project-intro"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vw;
+    }
+    
+    section[name="project-intro"] section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    section[name="project-intro"] h2 {
+        padding-bottom: 0.5em;
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-underline-offset: 0.2em;
+    }
+    
+    section[name="project-intro"] iframe {
+        max-width: 100%;
+    }
+    
+    section[name="project-info"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    section[name="project-info"] section[name="responsibility"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -356,10 +446,6 @@ body {
     body[name*="subpage"] main {
         background: linear-gradient(rgb(45, 45, 45) 0%, rgb(60, 60, 60) 50%,
             rgb(45, 45, 45) 100%);
-    }
-
-    footer {
-        background: linear-gradient(rgb(45, 45, 45) 15%, rgb(35, 35, 35) 85%);
     }
 
     .flex-rowwrap {
@@ -431,6 +517,55 @@ body {
         width: 70%;
         height: auto;
     }
+
+    body[name*="showcase"] main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6vh;
+    }
+    
+    section[name="project-intro"] {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3.5vw;
+    }
+    
+    section[name="project-intro"] section {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
+    
+    section[name="project-intro"] h2 {
+        padding-bottom: 1vw;
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-underline-offset: 0.2em;
+    }
+    
+    section[name="project-intro"] iframe {
+        max-width: 50%;
+    }
+    
+    section[name="project-info"] {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 9vw;
+    }
+    
+    section[name="project-info"] section[name="info"], section[name="project-info"] section[name="responsibility"] {
+        width: 40%;
+    }
+    
+    section[name="project-info"] section[name="responsibility"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 /* Show scrollbar on main of subpages if height is under 600px, as the content
@@ -479,7 +614,7 @@ body[name*="subpage"] main {
     padding: 1vh 5vw 3vh 5vw
 }
 
-body[name*="subpage"] main[name*="about"], body[name*="subpage"] main[class^="project"] {
+body[name*="subpage"] main[name*="about"], body[name*="subpage"] main[class^="project"], body[name*="subpage"] main[name*="techniques"] {
     overflow-y: scroll;
     -ms-overflow-style: none;
 }
@@ -560,8 +695,8 @@ fieldset > section textarea {
     padding: 1em;
 }
 
-section p {
-    padding-bottom: 1em;
+body[name|="contacts"] section p {
+    padding-bottom: 0.5em;
 }
 
 main[name="contacts-main"] {
@@ -589,16 +724,16 @@ main h4 {
 }
 
 main > p {
-    margin: 0 0 1em 0;
+    margin: 0 0 0.5em 0;
 }
 
 main ul {
-    padding: 0 1.25vw 0 3vw;
-    margin: 1em 0 1em 0;
+    padding: 0 0 0 3vw;
+    margin: 0.5em 0 0.5em 0;
 }
 
 main li {
-    padding-bottom: 1vh;
+    padding-bottom: 0.5vh;
 }
 
 nav a {
@@ -672,55 +807,6 @@ table[name|="techniques"] tbody td {
     padding: 0.4em 0.5em 0.4em 0.5em;
 }
 
-body[name*="showcase"] main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6vh;
-}
-
-section[name="project-intro"] {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 3.5vw;
-}
-
-section[name="project-intro"] section {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-}
-
-section[name="project-intro"] h2 {
-    padding-bottom: 1vw;
-    text-decoration: underline;
-    text-decoration-style: solid;
-    text-underline-offset: 0.2em;
-}
-
-section[name="project-intro"] iframe {
-    max-width: 50%;
-}
-
-section[name="project-info"] {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 9vw;
-}
-
-section[name="project-info"] section[name="info"], section[name="project-info"] section[name="responsibility"] {
-    width: 40%;
-}
-
-section[name="project-info"] section[name="responsibility"] {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 body[name*="projects"] main img {
     border-style: ridge;
     border-width: 0.4em;
@@ -731,6 +817,48 @@ body[name*="projects"] main img:hover {
     animation-name: proj-border-color-hover;
     animation-duration: 2.5s;
     animation-iteration-count: infinite;
+}
+
+footer {
+    background: linear-gradient(rgb(45, 45, 45) 15%, rgb(35, 35, 35) 85%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+}
+
+main[name*="techniques"] section[name="map"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body[name*="techniques"] section[name="gallery"] {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    gap: 1vw;
+    padding-top: 3em;
+    padding-bottom: 2em;
+}
+
+body[name*="techniques"] section[name="gallery"] figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body[name*="techniques"] section[name="gallery"] figure img {
+    width: 250px;
+    height: auto;
+}
+
+#inventory {
+    display: flex;
+    justify-content: center;
 }
 
 @keyframes link-text-color-hover {
