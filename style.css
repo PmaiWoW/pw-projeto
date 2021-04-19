@@ -861,6 +861,12 @@ body[name*="techniques"] section[name="gallery"] figure img {
     justify-content: center;
 }
 
+section[name="intro-video"] {
+    display: flex;
+    padding-top: 2em;
+    justify-content: center;
+}
+
 @keyframes link-text-color-hover {
     0% { color: rgb(255, 190, 125); }
     50% { color: rgb(248, 125, 0); }
